@@ -4,7 +4,33 @@
   <img src="https://mods.matthiesen.dev/badges/matthiesenCore.svg" alt="Matthiesen Core">
 </div>
 
-Default Server Listings is a Simple client side mod that adds default server list entries to the server-list.
+Default Server Listings is a Simple client side mod that adds default server list entries to the server-list. This is useful for modpacks that want to provide
+a curated list (or even just a single entry) of servers for their pack users to connect to. When the mod is installed and enabled, missing entries from the configured
+list will be automatically added to the client's server list. If the mod is disabled, no entries will be added to the server list.
+
+## Quick Start
+
+A default configuration file is generated with a default example when the mod is first run. You can edit this file and include it when you export your modpack from your launcher.
+
+The configuration file is located at `<game_directory>/config/default-server-listings.toml` and by default looks like this:
+
+```toml
+#Default Server Listings Configuration
+[config]
+	#Enable or disable the Default Server Listings mod
+	enabled = true
+
+		#List of default server listings
+		#Each entry should be a config object with the following fields:
+		#  - name: The display name of the server
+		#  - address: The IP address or domain of the server
+		#  - resourcePackStatus: The resource pack status (ENABLED, DISABLED, PROMPT)
+		#Server List Entries
+		[[config.serverListings.entries]]
+			name = "Local Host"
+			resourcePackStatus = "PROMPT"
+			address = "127.0.0.1"
+```
 
 ## Requirements
 
