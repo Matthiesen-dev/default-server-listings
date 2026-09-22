@@ -1,0 +1,16 @@
+{
+  "default_server_listings.configuration.title": "Default Server Listings",
+  "default_server_listings.configuration.section.default.server.listings.toml": "Default Server Listings",
+  "default_server_listings.configuration.section.default.server.listings.toml.title": "Default Server Listings",
+  "default_server_listings.configuration.config": "Default Server Listings Config",
+  "default_server_listings.configuration.config.tooltip": "This configuration file contains the default server listings that will be added to the server list when the game is first launched.",
+  "default_server_listings.configuration.config.button": "Edit",
+  "default_server_listings.configuration.config.enabled": "Loader Enabled",
+  "default_server_listings.configuration.config.enabled.tooltip": "If this is disabled, the default server listings will not be added to the server list when the game is first launched.",
+  "default_server_listings.configuration.config.serverListings": "Default Server Listings",
+  "default_server_listings.configuration.config.serverListings.tooltip": "This is a list of default server listings that will be added to the server list when the game is first launched. Each entry must contain a name, address, and resource pack status. The resource pack status can be one of the following: ENABLED, DISABLED, or PROMPT.",
+  "default_server_listings.configuration.config.serverListings.button": "Edit",
+  "default_server_listings.configuration.config.serverListings.entries": "Entries",
+  "default_server_listings.configuration.config.serverListings.entries.tooltip": "This is a list of default server listings that will be added to the server list when the game is first launched. Each entry must contain a name, address, and resource pack status. The resource pack status can be one of the following: ENABLED, DISABLED, or PROMPT.",
+  "default_server_listings.configuration.config.serverListings.entries.button": "Edit"
+}

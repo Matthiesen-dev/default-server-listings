@@ -32,10 +32,10 @@ public final class DefaultServerListingsConfig {
 
     public DefaultServerListingsConfig(ModConfigSpec.Builder builder) {
         builder.comment("Default Server Listings Configuration")
-                .translation("configuration.default_server_listings.config")
+                .translation("default_server_listings.configuration.config")
                 .push("config");
         enabled = builder.comment("Enable or disable the Default Server Listings mod")
-                .translation("configuration.default_server_listings.config.enabled")
+                .translation("default_server_listings.configuration.config.enabled")
                 .define("enabled", true);
 
         builder.comment(
@@ -45,10 +45,10 @@ public final class DefaultServerListingsConfig {
                         "  - address: The IP address or domain of the server",
                         "  - resourcePackStatus: The resource pack status (ENABLED, DISABLED, PROMPT)"
                 )
-                .translation("configuration.default_server_listings.config.serverListings")
+                .translation("default_server_listings.configuration.config.serverListings")
                 .push("serverListings");
         serverListings = builder.comment("Server List Entries")
-                .translation("configuration.default_server_listings.config.serverListings.entries")
+                .translation("default_server_listings.configuration.config.serverListings.entries")
                 .defineList(
                         List.of("entries"),
                         ServerListingEntry.DEFAULT_ENTRIES,
