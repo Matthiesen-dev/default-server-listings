@@ -1,7 +1,7 @@
 package dev.matthiesen.default_server_listings.common;
 
 import com.electronwill.nightconfig.core.Config;
-import net.minecraft.client.multiplayer.ServerData;
+import dev.matthiesen.default_server_listings.common.interfaces.ServerListingEntry;
 import net.neoforged.neoforge.common.ModConfigSpec;
 import org.apache.commons.lang3.tuple.Pair;
 
@@ -15,6 +15,10 @@ public final class DefaultServerListingsConfig {
         Pair<DefaultServerListingsConfig, ModConfigSpec> specPair = new ModConfigSpec.Builder().configure(DefaultServerListingsConfig::new);
         CONFIG = specPair.getLeft();
         CONFIG_SPEC = specPair.getRight();
+    }
+
+    public static boolean isEnabled() {
+        return CONFIG.enabled.getAsBoolean();
     }
 
     public static List<ServerListingEntry> getServerListings() {
@@ -49,27 +53,10 @@ public final class DefaultServerListingsConfig {
                         List.of("entries"),
                         List.of(),
                         null,
-                        entry -> entry instanceof Config && DefaultServerListingsConfig.ServerListingEntry.isValid((Config) entry)
+                        entry -> entry instanceof Config && ServerListingEntry.isValid((Config) entry)
                 );
         builder.pop(); // pop the "serverListings" section
 
         builder.pop(); // pop the "config" section
-    }
-
-    public record ServerListingEntry(String name, String address, ServerData.ServerPackStatus resourcePackStatus, ServerData.Type type) {
-        public ServerListingEntry(String name, String address, ServerData.ServerPackStatus resourcePackStatus) {
-            this(name, address, resourcePackStatus, ServerData.Type.OTHER);
-        }
-
-        public static ServerListingEntry deserialize(Config config) {
-            String name = config.get("name");
-            String address = config.get("address");
-            ServerData.ServerPackStatus resourcePackStatus = config.getEnum("resourcePackStatus", ServerData.ServerPackStatus.class);
-            return new ServerListingEntry(name, address, resourcePackStatus);
-        }
-
-        public static boolean isValid(Config config) {
-            return config.contains("name") && config.contains("address") && config.contains("resourcePackStatus");
-        }
     }
 }

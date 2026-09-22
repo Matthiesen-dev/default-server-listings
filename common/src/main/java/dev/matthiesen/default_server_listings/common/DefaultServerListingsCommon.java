@@ -1,10 +1,9 @@
 package dev.matthiesen.default_server_listings.common;
 
+import dev.matthiesen.default_server_listings.common.interfaces.Events;
 import dev.matthiesen.libs.faststats.Token;
 import dev.matthiesen.matthiesen_core.common.AbstractCommonMod;
-import dev.matthiesen.matthiesen_core.common.api.events.EventObservable;
 import dev.matthiesen.matthiesen_core.common.api.platform.loader.ModConfigType;
-import net.minecraft.client.Minecraft;
 import net.minecraft.client.multiplayer.ServerData;
 import net.minecraft.client.multiplayer.ServerList;
 import org.jetbrains.annotations.NotNull;
@@ -33,7 +32,7 @@ public final class DefaultServerListingsCommon extends AbstractCommonMod {
         registerModConfig(MOD_ID, ModConfigType.STARTUP, DefaultServerListingsConfig.CONFIG_SPEC, modConfig("config"));
 
         Events.CLIENT_STARTED.subscribe(event -> {
-            if (!DefaultServerListingsConfig.CONFIG.enabled.getAsBoolean()) {
+            if (!DefaultServerListingsConfig.isEnabled()) {
                 createInfoLog("Default Server Listings mod is disabled in the config.");
                 return;
             }
@@ -55,12 +54,5 @@ public final class DefaultServerListingsCommon extends AbstractCommonMod {
         });
 
         createInfoLog("Initialized");
-    }
-
-    public static class Events {
-        public static final EventObservable<ClientStarted> CLIENT_STARTED = new EventObservable<>();
-    }
-
-    public record ClientStarted(Minecraft client) {
     }
 }
