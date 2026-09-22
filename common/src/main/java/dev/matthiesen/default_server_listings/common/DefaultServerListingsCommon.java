@@ -51,6 +51,7 @@ public final class DefaultServerListingsCommon extends AbstractCommonMod {
                     createInfoLog("Server listing already exists: " + entry.name() + " (" + ip + ")");
                 }
             }
+            serverList.save();
         });
 
         createInfoLog("Initialized");
