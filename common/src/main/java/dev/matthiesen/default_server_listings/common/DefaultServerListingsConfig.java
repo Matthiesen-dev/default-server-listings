@@ -51,7 +51,7 @@ public final class DefaultServerListingsConfig {
                 .translation("configuration.default_server_listings.config.serverListings.entries")
                 .defineList(
                         List.of("entries"),
-                        List.of(),
+                        ServerListingEntry.DEFAULT_ENTRIES,
                         null,
                         entry -> entry instanceof Config && ServerListingEntry.isValid((Config) entry)
                 );

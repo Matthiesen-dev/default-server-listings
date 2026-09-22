@@ -1,10 +1,10 @@
 package dev.matthiesen.default_server_listings.common;
 
 import dev.matthiesen.default_server_listings.common.interfaces.Events;
+import dev.matthiesen.default_server_listings.common.interfaces.ServerListingEntry;
 import dev.matthiesen.libs.faststats.Token;
 import dev.matthiesen.matthiesen_core.common.AbstractCommonMod;
 import dev.matthiesen.matthiesen_core.common.api.platform.loader.ModConfigType;
-import net.minecraft.client.multiplayer.ServerData;
 import net.minecraft.client.multiplayer.ServerList;
 import org.jetbrains.annotations.NotNull;
 
@@ -34,18 +34,8 @@ public final class DefaultServerListingsCommon extends AbstractCommonMod {
             }
             ServerList serverList = new ServerList(event.client());
             serverList.load();
-            for (var entry : DefaultServerListingsConfig.getServerListings()) {
-                String ip = entry.address();
-                if (serverList.get(ip) == null) {
-
-                    ServerData serverData = new ServerData(entry.name(), ip, entry.type());
-                    serverData.setResourcePackStatus(entry.resourcePackStatus());
-                    serverList.add(serverData, false);
-
-                    createInfoLog("Added default server listing: " + entry.name() + " (" + ip + ")");
-                } else {
-                    createInfoLog("Server listing already exists: " + entry.name() + " (" + ip + ")");
-                }
+            for (ServerListingEntry entry : DefaultServerListingsConfig.getServerListings()) {
+                entry.appendToServerList(serverList);
             }
             serverList.save();
         });
