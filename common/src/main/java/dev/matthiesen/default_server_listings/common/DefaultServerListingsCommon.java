@@ -14,10 +14,6 @@ public final class DefaultServerListingsCommon extends AbstractCommonMod {
     public static @Token final String METRICS_TOKEN = "73c31632a940a1c70e95a0df03ccfbae";
     public static final DefaultServerListingsCommon INSTANCE = new DefaultServerListingsCommon();
 
-    public static String modConfig(String path) {
-        return MOD_ID + "/" + path + ".toml";
-    }
-
     public DefaultServerListingsCommon() {
         super(MOD_ID, MOD_NAME);
     }
@@ -29,7 +25,7 @@ public final class DefaultServerListingsCommon extends AbstractCommonMod {
 
     public void initialize() {
         super.initialize();
-        registerModConfig(MOD_ID, ModConfigType.STARTUP, DefaultServerListingsConfig.CONFIG_SPEC, modConfig("config"));
+        registerModConfig(MOD_ID, ModConfigType.STARTUP, DefaultServerListingsConfig.CONFIG_SPEC, "default_server_listings.toml");
 
         Events.CLIENT_STARTED.subscribe(event -> {
             if (!DefaultServerListingsConfig.isEnabled()) {
