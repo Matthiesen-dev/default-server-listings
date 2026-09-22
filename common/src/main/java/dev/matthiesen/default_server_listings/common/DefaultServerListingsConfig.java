@@ -27,17 +27,31 @@ public final class DefaultServerListingsConfig {
     public ModConfigSpec.ConfigValue<List<? extends Config>> serverListings;
 
     public DefaultServerListingsConfig(ModConfigSpec.Builder builder) {
-        builder.comment("Default Server Listings Configuration").push("config");
-
+        builder.comment("Default Server Listings Configuration")
+                .translation("configuration.default_server_listings.config")
+                .push("config");
         enabled = builder.comment("Enable or disable the Default Server Listings mod")
+                .translation("configuration.default_server_listings.config.enabled")
                 .define("enabled", true);
-        serverListings = builder.comment("List of default server listings")
+
+        builder.comment(
+                        "List of default server listings",
+                        "Each entry should be a config object with the following fields:",
+                        "  - name: The display name of the server",
+                        "  - address: The IP address or domain of the server",
+                        "  - resourcePackStatus: The resource pack status (ENABLED, DISABLED, PROMPT)"
+                )
+                .translation("configuration.default_server_listings.config.serverListings")
+                .push("serverListings");
+        serverListings = builder.comment("Server List Entries")
+                .translation("configuration.default_server_listings.config.serverListings.entries")
                 .defineList(
-                        "serverListings",
+                        List.of("entries"),
                         List.of(),
                         null,
                         entry -> entry instanceof Config && DefaultServerListingsConfig.ServerListingEntry.isValid((Config) entry)
                 );
+        builder.pop(); // pop the "serverListings" section
 
         builder.pop(); // pop the "config" section
     }
