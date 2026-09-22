@@ -18,11 +18,8 @@
   },
   "environment": "*",
   "entrypoints": {
-    "main": [
-      "dev.matthiesen.template_cobblemon_sidemod.fabric.TemplateCobblemonSidemodFabric"
-    ],
     "client": [
-      "dev.matthiesen.template_cobblemon_sidemod.fabric.TemplateCobblemonSidemodFabricClient"
+      "dev.matthiesen.default_server_listings.fabric.DefaultServerListingsFabric"
     ]
   },
   "depends": {

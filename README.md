@@ -1,29 +1,26 @@
-# template-cobblemon-sidemod
+# Default Server Listings
 
 <div>
   <img src="https://mods.matthiesen.dev/badges/matthiesenCore.svg" alt="Matthiesen Core">
-  <img src="https://mods.matthiesen.dev/badges/cobblemon.svg" alt="Cobblemon">
 </div>
 
-Template for a Cobblemon side mod. This template includes the necessary setup for a mod that depends on the Matthiesen Core and Cobblemon, 
-but does not include any specific functionality. You can use this as a starting point for creating your own Cobblemon side mod.
+Default Server Listings is a Simple client side mod that adds default server list entries to the server-list.
 
 ## Requirements
 
 - [Matthiesen Core](https://modrinth.com/mod/matthiesen-core)
-- [Cobblemon](https://modrinth.com/mod/cobblemon)
 - [Fabric API](https://modrinth.com/mod/fabric-api) (Fabric only)
 - [Forge Config API Port](https://modrinth.com/mod/forge-config-api-port) (Fabric only)
 
 ## Docs
 
-Documentation for this mod can be found at [mods.matthiesen.dev](https://mods.matthiesen.dev/TODO/)
+Documentation for this mod can be found at [mods.matthiesen.dev](https://mods.matthiesen.dev/default-server-listings/)
 
 ## Version Compatibility
 
-| Minecraft Version | Matthiesen Core Version | Cobblemon Version | Mod Version |
-|-------------------|-------------------------|-------------------|-------------|
-| 1.21.1            | 1.x.x                   | 1.8.0             | 1.x.x       |
+| Minecraft Version | Matthiesen Core Version | Mod Version |
+|-------------------|-------------------------|-------------|
+| 1.21.1            | 1.x.x                   | 1.x.x       |
 
 ## FastStats Metrics
 
@@ -31,7 +28,7 @@ This mod uses [FastStats](https://faststats.dev) to collect anonymous usage stat
 how this mod is being used and improve it over time. You can learn more about the data collected and how it is used by visiting
 [FastStats: Information](https://faststats.dev/info).
 
-You can also view the data collected by this mod on the [FastStats: TODO](https://faststats.dev/project/TODO) page.
+You can also view the data collected by this mod on the [FastStats: Default Server Listings](https://faststats.dev/project/default-server-listings) page.
 
 To opt out of this data collection, set the `enabled` property to `false` in the `<game_directory>/config/matthiesen_core/metrics.properties` file.
 
