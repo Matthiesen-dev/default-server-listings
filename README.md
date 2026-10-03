@@ -16,17 +16,16 @@ The configuration file is located at `<game_directory>/config/default-server-lis
 
 ```toml
 #Default Server Listings Configuration
+#Each entry should be a config object with the following fields:
+#  - name: The display name of the server
+#  - address: The IP address or domain of the server
+#  - resourcePackStatus: The resource pack status (ENABLED, DISABLED, PROMPT)
 [config]
 	#Enable or disable the Default Server Listings mod
 	enabled = true
 
-		#List of default server listings
-		#Each entry should be a config object with the following fields:
-		#  - name: The display name of the server
-		#  - address: The IP address or domain of the server
-		#  - resourcePackStatus: The resource pack status (ENABLED, DISABLED, PROMPT)
 		#Server List Entries
-		[[config.serverListings.entries]]
+		[[config.serverListings]]
 			name = "Local Host"
 			resourcePackStatus = "PROMPT"
 			address = "127.0.0.1"
