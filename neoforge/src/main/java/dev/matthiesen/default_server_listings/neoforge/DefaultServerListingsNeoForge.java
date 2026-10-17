@@ -1,8 +1,6 @@
 package dev.matthiesen.default_server_listings.neoforge;
 
 import dev.matthiesen.default_server_listings.common.DefaultServerListingsCommon;
-import dev.matthiesen.default_server_listings.common.interfaces.ClientStarted;
-import dev.matthiesen.default_server_listings.common.interfaces.Events;
 import net.minecraft.client.Minecraft;
 import net.neoforged.api.distmarker.Dist;
 import net.neoforged.bus.api.IEventBus;
@@ -21,7 +19,7 @@ public final class DefaultServerListingsNeoForge {
 
     public void onClientStarted(FMLLoadCompleteEvent event) {
         event.enqueueWork(() ->
-                Events.CLIENT_STARTED.emit(new ClientStarted(Minecraft.getInstance()))
+                DefaultServerListingsCommon.Events.CLIENT_STARTED.emit(new DefaultServerListingsCommon.ClientStarted(Minecraft.getInstance()))
         );
     }
 }
