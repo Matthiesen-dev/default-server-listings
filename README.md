@@ -45,7 +45,8 @@ Documentation for this mod can be found at [mods.matthiesen.dev](https://mods.ma
 
 | Minecraft Version | Matthiesen Core Version | Mod Version |
 |-------------------|-------------------------|-------------|
-| 1.21.1            | 1.x.x                   | 1.x.x       |
+| 1.21.1            | 1.2.7+                  | 1.0.0+      |
+| 1.21.1            | 1.3.0+                  | 1.2.0+      |
 
 ## FastStats Metrics
 
