@@ -1,8 +1,8 @@
 package dev.matthiesen.default_server_listings.common;
 
-import dev.matthiesen.libs.faststats.Token;
+import dev.faststats.Token;
 import dev.matthiesen.matthiesen_core.common.AbstractCommonMod;
-import dev.matthiesen.matthiesen_core.common.api.events.EventObservable;
+import dev.matthiesen.matthiesen_core.common.api.events.observable.EventObservable;
 import dev.matthiesen.matthiesen_core.common.api.platform.loader.ModConfigType;
 import net.minecraft.client.Minecraft;
 import net.minecraft.client.multiplayer.ServerList;
